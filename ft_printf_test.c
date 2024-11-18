@@ -6,7 +6,7 @@
 /*   By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:39:46 by rhvidste          #+#    #+#             */
-/*   Updated: 2024/11/18 15:53:22 by rhvidste         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:29:07 by rhvidste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int		main()
 	ptr = NULL;
 	x = 255;
 
-	printf("NULL TESTING:\n");
+	printf("NULL TESTING: adding NULL arguments to some functions\n");
 	printf("-------------------------------------------------------\n");
 	printf("						sys_out:\n");
 	printf("-------------------------------------------------------\n");
