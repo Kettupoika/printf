@@ -6,7 +6,7 @@
 /*   By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 09:33:11 by rhvidste          #+#    #+#             */
-/*   Updated: 2024/11/19 09:46:55 by rhvidste         ###   ########.fr       */
+/*   Updated: 2024/11/19 11:41:25 by rhvidste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdio.h>
 
 int	ft_printchar(int c);
 int	ft_printstr(const char *str);
