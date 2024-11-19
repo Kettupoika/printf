@@ -6,7 +6,7 @@
 /*   By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:06:35 by rhvidste          #+#    #+#             */
-/*   Updated: 2024/11/18 14:39:39 by rhvidste         ###   ########.fr       */
+/*   Updated: 2024/11/19 09:22:31 by rhvidste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static int	ft_hex_len(unsigned int num);
 static void	ft_put_hex(unsigned int num, char format);
 
-int		ft_print_hex(unsigned int num, const char format)
+int	ft_print_hex(unsigned int num, const char format)
 {
 	if (num == 0)
 		return (write(1, "0", 1));
@@ -49,7 +49,7 @@ static void	ft_put_hex(unsigned int num, char format)
 	{
 		if (num <= 9)
 			ft_putchar_fd((num + '0'), 1);
-		else 
+		else
 		{
 			if (format == 'x')
 				ft_putchar_fd((num - 10 + 'a'), 1);

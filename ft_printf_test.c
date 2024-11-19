@@ -6,12 +6,13 @@
 /*   By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:39:46 by rhvidste          #+#    #+#             */
-/*   Updated: 2024/11/18 16:29:07 by rhvidste         ###   ########.fr       */
+/*   Updated: 2024/11/19 09:16:09 by rhvidste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_print.h"
+#include <limits.h>
 
 int	ft_printf(const char *, ...);
 
@@ -27,22 +28,21 @@ int		main()
 	unsigned int	u;
 	int			error1;
 	int			error2;
-	//char		d;
 
 	name = "Laura";
 	animal = "cat";
-	//animal = NULL;
 	c = 'a';
 	age = 23;
 	ptr = &age;
 	i = 2023423;
-	//ptr = NULL;
 	u = 76665;
 	x =	25554645;
-	//d = '%';
 
 
 
+	printf("-------------------------------------------------------\n");
+	printf("MAIN TESTING: testing output against system out\n");
+	printf("-------------------------------------------------------\n");
 	printf("-------------------------------------------------------\n");
 	printf("						sys_out:\n");
 	printf("-------------------------------------------------------\n");
@@ -55,12 +55,16 @@ int		main()
 	printf("sys error = %d\n", error1);
 	printf("ft_error = %d\n", error2);
 	printf("-------------------------------------------------------\n");
-
+	
+	name = NULL;
 	animal = NULL;
+	age = INT_MAX;
 	ptr = NULL;
+	i = INT_MAX;
 	x = 255;
+	u = UINT_MAX;
 
-	printf("NULL TESTING: adding NULL arguments to some functions\n");
+	printf("NULL TESTING: adding NULL arguments and MAX limits\n");
 	printf("-------------------------------------------------------\n");
 	printf("						sys_out:\n");
 	printf("-------------------------------------------------------\n");
@@ -72,4 +76,5 @@ int		main()
 	printf("-------------------------------------------------------\n");
 	printf("sys error = %d\n", error1);
 	printf("ft_error = %d\n", error2);
+	printf("-------------------------------------------------------\n");
 }	

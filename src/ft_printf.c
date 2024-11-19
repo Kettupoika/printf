@@ -6,17 +6,14 @@
 /*   By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 12:18:08 by rhvidste          #+#    #+#             */
-/*   Updated: 2024/11/18 14:48:43 by rhvidste         ###   ########.fr       */
+/*   Updated: 2024/11/19 09:27:47 by rhvidste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_print.h"
 
-
-//set is: cspdiuxX%
-
-int		ft_formats(va_list args, const char format)
+int	ft_formats(va_list args, const char format)
 {
 	int		print_len;
 
@@ -35,10 +32,10 @@ int		ft_formats(va_list args, const char format)
 		print_len += ft_print_hex(va_arg(args, unsigned int), format);
 	else if (format == '%')
 		print_len += ft_printpercent();
-	return(print_len);
+	return (print_len);
 }
 
-int		ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	int		i;
 	int		print_len;
@@ -47,7 +44,7 @@ int		ft_printf(const char *format, ...)
 	i = 0;
 	print_len = 0;
 	va_start(args, format);
-	while(format[i])
+	while (format[i])
 	{
 		if (format[i] == '%')
 		{

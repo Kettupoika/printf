@@ -6,14 +6,14 @@
 /*   By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:40:45 by rhvidste          #+#    #+#             */
-/*   Updated: 2024/11/18 14:08:18 by rhvidste         ###   ########.fr       */
+/*   Updated: 2024/11/19 09:26:00 by rhvidste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_print.h"
 
-static int		ft_len(long nbr)
+static int	ft_len(long nbr)
 {
 	int		count;
 
@@ -33,7 +33,7 @@ static int		ft_len(long nbr)
 	return (count);
 }
 
-int		ft_printnbr(int nb)
+int	ft_printnbr(int nb)
 {
 	int		len;
 	long	nbr;
@@ -56,5 +56,5 @@ int		ft_printnbr(int nb)
 	else
 		c = ((nb % 10) + '0');
 	write (1, &c, 1);
-	return(len);
+	return (len);
 }

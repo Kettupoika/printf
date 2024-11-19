@@ -6,7 +6,7 @@
 /*   By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 11:34:49 by rhvidste          #+#    #+#             */
-/*   Updated: 2024/11/18 14:06:14 by rhvidste         ###   ########.fr       */
+/*   Updated: 2024/11/19 09:23:25 by rhvidste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 static int	ft_count(unsigned int num);
 static char	*ft_uitoa(unsigned int n);
 
-int		ft_printunsigned(unsigned int n)
+int	ft_printunsigned(unsigned int n)
 {
 	int		print_len;
 	char	*num;
+
 	print_len = 0;
 	if (n == 0)
 		print_len += write(1, "0", 1);
-	else 
+	else
 	{
 		num = ft_uitoa(n);
 		print_len += ft_printstr(num);
@@ -45,7 +46,7 @@ static int	ft_count(unsigned int num)
 	return (n);
 }
 
-static char	*ft_uitoa(unsigned int	n)
+static char	*ft_uitoa(unsigned int n)
 {
 	char	*num;
 	int		len;

@@ -6,23 +6,23 @@
 /*   By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:52:29 by rhvidste          #+#    #+#             */
-/*   Updated: 2024/11/18 14:03:10 by rhvidste         ###   ########.fr       */
+/*   Updated: 2024/11/19 09:19:10 by rhvidste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_print.h"
 
-int		ft_printstr(const char *str)
+int	ft_printstr(const char *str)
 {
-		int		len;
+	int		len;
 
-		len = 0;
-		if (str == NULL)
-		{
-			len += write(1, "(null)", 6);
-			return (len);
-		}
-		len = write(1, str, ft_strlen(str));
+	len = 0;
+	if (str == NULL)
+	{
+		len += write(1, "(null)", 6);
 		return (len);
+	}
+	len = write(1, str, ft_strlen(str));
+	return (len);
 }

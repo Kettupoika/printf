@@ -6,14 +6,14 @@
 /*   By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:54:13 by rhvidste          #+#    #+#             */
-/*   Updated: 2024/11/18 11:06:26 by rhvidste         ###   ########.fr       */
+/*   Updated: 2024/11/19 09:19:27 by rhvidste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_print.h"
 
-int		ft_printchar(int c)
+int	ft_printchar(int c)
 {
 	write(1, &c, 1);
 	return (1);

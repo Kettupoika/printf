@@ -6,25 +6,23 @@
 /*   By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:27:55 by rhvidste          #+#    #+#             */
-/*   Updated: 2024/11/18 14:25:26 by rhvidste         ###   ########.fr       */
+/*   Updated: 2024/11/19 09:25:03 by rhvidste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_print.h"
 
-
 static int		ft_ptr_len(unsigned long num);
 static void		ft_put_ptr(unsigned long num);
 
-int		ft_printptr(void *ptr)
+int	ft_printptr(void *ptr)
 {
-	int			print_len;
+	int					print_len;
 	unsigned long		n;
 
 	n = (unsigned long)ptr;
 	print_len = 0;
-
 	if (ptr == NULL)
 	{
 		print_len += write(1, "(nil)", 5);
@@ -38,11 +36,10 @@ int		ft_printptr(void *ptr)
 		ft_put_ptr(n);
 		print_len += ft_ptr_len(n);
 	}
-	
 	return (print_len);
 }
 
-static int		ft_ptr_len(unsigned long num)
+static int	ft_ptr_len(unsigned long num)
 {
 	int		len;
 
@@ -55,7 +52,7 @@ static int		ft_ptr_len(unsigned long num)
 	return (len);
 }
 
-static void		ft_put_ptr(unsigned long num)
+static void	ft_put_ptr(unsigned long num)
 {
 	if (num >= 16)
 	{
