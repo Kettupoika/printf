@@ -5,89 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/19 09:49:02 by rhvidste          #+#    #+#              #
-#    Updated: 2024/11/19 11:36:20 by rhvidste         ###   ########.fr        #
+#    Created: 2024/11/15 09:41:28 by rhvidste          #+#    #+#              #
+#    Updated: 2024/11/18 16:20:15 by rhvidste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#-------------------------------------------------------------------------------
+NAME	= ft_printf_test
+INCLUDE = include/
+LIBFT	= libft/libft.a
+SRCDIR = src/
+SRC_FILES = ft_printf ft_printchar ft_printstr ft_printnbr ft_printptr ft_printunsigned \
+			ft_print_hex ft_printpercent
+TEST_FILE = ft_printf_test.c
+SRC = $(addprefix $(SRCDIR), $(addsuffix .c, $(SRC_FILES)))
+CC = cc
+FLAGS = -Werror -Wextra -Wall -I $(INCLUDE)
 
-#Variables
-#-------------------------------------------------------------------------------
-NAME		= libftprint.a
-INCLUDE		= include
-LIBFT		= libft
-SRC_DIR		= src/
-OBJ_DIR		= obj/
-CC			= cc
-CFLAGS		= -Wall -Werror -Wextra -I
-RM			= rm -f
-AR			= ar rcs
-#------------------------------------------------------------------------------
+$(NAME): $(LIBFT) $(SRC)
+		$(CC) $(FLAGS) $(TEST_FILE) $(SRC) $(LIBFT) -o $(NAME)
+all: $(NAME)
 
-#Colors
-#------------------------------------------------------------------------------
-DEF_COLOR = \033[0;39m
-GRAY = \033[0;90m
-RED = \033[0;91m
-GREEN = \033[0;92m
-YELLOW = \033[0;93m
-BLUE = \033[0;94m
-MAGENTA = \033[0;95m
-CYAN = \033[0;96m
-WHITE = \033[0;97m
-#------------------------------------------------------------------------------
-
-#Sources
-#------------------------------------------------------------------------------
-SRC_FILES	= 	ft_printf ft_printchar ft_prin_hex ft_printnbr ft_printpercent \
-				ft_printptr ft_printstr ft_printunsigned
-
-SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
-OBJ			=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRCFILES)))
-#-----------------------------------------------------------------------------
-
-#Rules
-#-----------------------------------------------------------------------------
-OBJF		= 	.cache_exists
-
-all:		$(NAME)
-
-$(NAME):	$(OBJ)
-					@make -C $(LIBFT)
-					@cp libft/libft.a .
-					@mv libft.a $(NAME)
-					@$(AR) $(NAME) $(OBJ)
-					@echo "$(GREEN)ft_printf compiled!$(DEF_COLOR)"
-
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
-					@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
-					@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@)
-
-$(OBJF):
-					@mkdir -p $(OBJ_DIR)
-#----------------------------------------------------------------------------
-
-#clean
-#----------------------------------------------------------------------------
 clean:
-					@$(RM) -rf $(OBJ_DIR)
-					@make clean -C $(LIBFT)
-					@echo "$(BLUE)ft_printf object files cleaned!$(DEF_COLOR)"
+		rm -f $(NAME)
 
-fclean:		clean
-					@$(RM) -f $(NAME)
-					@$(RM) -f $(LIBFT)/liibft.a
-					@echo "$(CYAN)ft_printf executable files cleaned!$(DEF_COLOR)"
-					@echo "$(CYAN)libft executable files cleaned!$(DEF_COLOR)"
-
-re:			fclean all
-					@echo "$(GREEN)Cleaned and rebuilt everything for ft_printf!$(DEF_COLOR)"
-#----------------------------------------------------------------------------
-
-#Norminette
-#----------------------------------------------------------------------------
-norm:
-					@norminette $(SRC) $(INCLUDE) $(LIBFT) | grep -v Norme -B1 || true
-#----------------------------------------------------------------------------
-.PHONY:		all clean fclean re norm
+re: clean all
