@@ -6,7 +6,7 @@
 #    By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 09:49:02 by rhvidste          #+#    #+#              #
-#    Updated: 2024/11/20 15:16:51 by rhvidste         ###   ########.fr        #
+#    Updated: 2024/11/20 18:20:40 by rhvidste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 #Variables
 #-------------------------------------------------------------------------------
-NAME		= libftprint.a
+NAME		= libftprintf.a
 INCLUDE		= include
 LIBFT		= libft
 SRC_DIR		= src/
@@ -44,7 +44,7 @@ SRC_FILES	= 	ft_printf ft_printchar ft_print_hex ft_printnbr ft_printpercent \
 				ft_printptr ft_printstr ft_printunsigned
 
 SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
-OBJ			=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRCFILES)))
+OBJ			=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 #-----------------------------------------------------------------------------
 
 #Rules
@@ -62,7 +62,7 @@ $(NAME):	$(OBJ)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
 					@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
-					@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@)
+					@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 $(OBJF):
 					@mkdir -p $(OBJ_DIR)
@@ -77,7 +77,7 @@ clean:
 
 fclean:		clean
 					@$(RM) -f $(NAME)
-					@$(RM) -f $(LIBFT)/liibft.a
+					@$(RM) -f $(LIBFT)/libft.a
 					@echo "$(CYAN)ft_printf executable files cleaned!$(DEF_COLOR)"
 					@echo "$(CYAN)libft executable files cleaned!$(DEF_COLOR)"
 
