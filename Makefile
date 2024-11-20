@@ -6,7 +6,7 @@
 #    By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 09:49:02 by rhvidste          #+#    #+#              #
-#    Updated: 2024/11/19 11:36:20 by rhvidste         ###   ########.fr        #
+#    Updated: 2024/11/20 15:16:51 by rhvidste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ WHITE = \033[0;97m
 
 #Sources
 #------------------------------------------------------------------------------
-SRC_FILES	= 	ft_printf ft_printchar ft_prin_hex ft_printnbr ft_printpercent \
+SRC_FILES	= 	ft_printf ft_printchar ft_print_hex ft_printnbr ft_printpercent \
 				ft_printptr ft_printstr ft_printunsigned
 
 SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
