@@ -6,7 +6,7 @@
 /*   By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:39:46 by rhvidste          #+#    #+#             */
-/*   Updated: 2024/11/21 10:51:50 by rhvidste         ###   ########.fr       */
+/*   Updated: 2024/11/21 11:51:24 by rhvidste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,11 +156,13 @@ int		main(int argc, char **argv)
 	printf("-------------------------------------------------------\n");
 	printf("						sys_out:\n");
 	printf("-------------------------------------------------------\n");
-	error1 = printf("%s\n", input);
+	//error1 = printf("%s\n", input);
+	error1 = printf(argv[1]);
 	printf("-------------------------------------------------------\n");
 	printf("						ft_out:\n");
 	printf("-------------------------------------------------------\n");
-	error2 = ft_printf("%s\n", input);	
+	//error2 = ft_printf("%s\n", input);	
+	error2 = ft_printf(argv[1]);
 	printf("-------------------------------------------------------\n");
 	printf("sys error = %d\n", error1);
 	printf("ft_error = %d\n", error2);
