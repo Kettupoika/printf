@@ -6,7 +6,7 @@
 #    By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/21 09:44:46 by rhvidste          #+#    #+#              #
-#    Updated: 2024/11/21 09:53:30 by rhvidste         ###   ########.fr        #
+#    Updated: 2024/11/21 10:50:27 by rhvidste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ LIB		= libftprintf.a
 SRC		= ft_printf_test.c
 CC		= cc
 FLAGS	= -Werror -Wextra -Wall -I $(INCLUDE)
+#FLAGS	= -I $(INCLUDE)
 
 $(NAME): $(LIB) $(SRC)
 		$(CC) $(FLAGS) $(SRC) $(LIB) -o $(NAME)
