@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile00.bak                                     :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/21 09:44:46 by rhvidste          #+#    #+#              #
-#    Updated: 2024/11/21 10:53:17 by rhvidste         ###   ########.fr        #
+#    Updated: 2024/11/21 12:10:39 by rhvidste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ INCLUDE = include/
 LIB		= libftprintf.a
 SRC		= ft_printf_test.c
 CC		= cc
-FLAGS	= -Werror -Wextra -Wall -I $(INCLUDE)
-#FLAGS	= -I $(INCLUDE)
+#FLAGS	= -Werror -Wextra -Wall -I $(INCLUDE)
+FLAGS	= -I $(INCLUDE)
 
 $(NAME): $(LIB) $(SRC)
 		$(CC) $(FLAGS) $(SRC) $(LIB) -o $(NAME)
