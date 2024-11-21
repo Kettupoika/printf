@@ -6,7 +6,7 @@
 /*   By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 12:18:08 by rhvidste          #+#    #+#             */
-/*   Updated: 2024/11/20 18:18:40 by rhvidste         ###   ########.fr       */
+/*   Updated: 2024/11/21 11:56:56 by rhvidste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	ft_formats(va_list args, const char format)
 		print_len += ft_print_hex(va_arg(args, unsigned int), format);
 	else if (format == '%')
 		print_len += ft_printpercent();
+	else
+		return (-1);
 	return (print_len);
 }
 
