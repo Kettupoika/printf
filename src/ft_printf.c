@@ -6,7 +6,7 @@
 /*   By: rhvidste <rhvidste@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 12:18:08 by rhvidste          #+#    #+#             */
-/*   Updated: 2024/11/21 17:23:14 by rhvidste         ###   ########.fr       */
+/*   Updated: 2024/11/22 11:14:37 by rhvidste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,8 @@ int	ft_formats(va_list args, const char format)
 		print_len += ft_print_hex(va_arg(args, unsigned int), format);
 	else if (format == '%')
 		print_len += ft_printpercent();
-	else if (format == '\0')
-	{
-		return (-1);
-	}
+	else if (format == ' ')
+		print_len += write(1, " ", 1);
 	else
 	{
 		print_len += write(1, "%", 1);
@@ -55,12 +53,10 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i])
 	{
-		if (print_len < 0)
+		if (format[i] == '%')
 		{
-			return (print_len);
-		}
-		else if (format[i] == '%')
-		{
+			if (format [i + 1] == '\0')
+				return (-1);
 			print_len += ft_formats(args, format[i + 1]);
 			i++;
 		}
