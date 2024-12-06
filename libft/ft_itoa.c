@@ -49,7 +49,7 @@ static int	ft_len(long nbr)
 
 	count = 0;
 	if (nbr < 0)
-	{	
+	{
 		count++;
 		nbr = -nbr;
 	}
